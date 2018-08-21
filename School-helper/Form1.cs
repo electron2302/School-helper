@@ -18,7 +18,7 @@ namespace School_helper
         Dictionary<string, string> Folders = new Dictionary<string, string>();
         string DictionarySaveInAppDataDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData).ToString() + "\\School-helper";
         string DictionarySaveInAppDataFile = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData).ToString() + "\\School-helper" + "\\FoldersSave.txt";
-        string BlackFileInAppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData).ToString() + "\\School-helper" + "\\Black.odt";
+        string BlankFileInAppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData).ToString() + "\\School-helper" + "\\Blank.odt";
 
         public Form1()
         {
@@ -118,10 +118,10 @@ namespace School_helper
 
             if (!File.Exists(path))
             {
-                if (File.Exists(BlackFileInAppData))
+                if (File.Exists(BlankFileInAppData))
                 {
-                    System.IO.File.Copy(BlackFileInAppData, path, false);
-                    TextBox.AppendText("BlackFile was Copied to " + path + " :)" + NewLine);
+                    System.IO.File.Copy(BlankFileInAppData, path, false);
+                    TextBox.AppendText("BlankFile was Copied to " + path + " :)" + NewLine);
                 }
                 else
                 {
